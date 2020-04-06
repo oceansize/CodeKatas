@@ -1,5 +1,7 @@
 
 
+using NUnit.Framework;
+
 namespace PigLatin.Tests
 {
     [TestFixture]

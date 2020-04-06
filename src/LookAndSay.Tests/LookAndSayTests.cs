@@ -1,4 +1,5 @@
 using System;
+using NUnit.Framework;
 
 
 namespace LookAndSay.Tests
@@ -56,10 +57,9 @@ namespace LookAndSay.Tests
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void LookAndSay_throws_ArgumentException_exception_if_sequence_has_non_numeric_characters()
         {
-            var result = lookAndSay.CalculateNextSequence("ABC");
+            Assert.Throws<ArgumentException>(() => lookAndSay.CalculateNextSequence("ABC"));
         }
     }
 }
