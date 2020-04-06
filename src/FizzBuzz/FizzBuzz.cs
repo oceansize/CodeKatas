@@ -8,32 +8,24 @@ namespace FizzBuzz
     {
         public string Check(int i)
         {
-            if (IsDivisibleByFifteen(i))
+            if (IsDivisibleBy(i, 15))
             {
                 return "FizzBuzz";
             }
-            if (IsDivisibleByThree(i))
+            if (IsDivisibleBy(i, 3))
             {
                 return "Fizz";
             }
-            if (IsDivisibleByFive(i))
+            if (IsDivisibleBy(i, 5))
             {
                 return "Buzz";
             }
             return i.ToString();
         }
 
-        private bool IsDivisibleByThree(int number)
+        private bool IsDivisibleBy(int number, int divisor)
         {
-            return number % 3 == 0;
-        }
-        private bool IsDivisibleByFive(int number)
-        {
-            return number % 5 == 0;
-        }
-        private bool IsDivisibleByFifteen(int number)
-        {
-            return number % 15 == 0;
+            return number % divisor == 0;
         }
     }
 }
