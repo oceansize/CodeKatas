@@ -10,7 +10,9 @@ namespace ReverseString
     {
         public string Reverse(string s)
         {
-            throw new NotImplementedException();
+            char[] inputToCharacters = s.ToCharArray();
+            Array.Reverse(inputToCharacters);
+            return new string(inputToCharacters);
         }
     }
 }
