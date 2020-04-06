@@ -1,33 +1,33 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 
 namespace ReverseString.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ReverseStringTests
     {
         private ReverseString reverseString;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             reverseString = new ReverseString();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             reverseString = null;
         }
         
-        [TestMethod]
+        [Test]
         public void ReverseString_HelloWorld()
         {
             string result = reverseString.Reverse("Hello, World!");
             Assert.AreEqual("!dlroW ,olleH", result);
         }
 
-        [TestMethod]
+        [Test]
         public void ReverseString_called_twice_returns_original_value()
         {
             const string expected = "Hello, World!";
@@ -35,7 +35,7 @@ namespace ReverseString.Tests
             Assert.AreEqual(expected, result);
         }
 
-        [TestMethod]
+        [Test]
         public void ReverseString_returns_empty_string_for_input_of_empty_string()
         {
             string result = reverseString.Reverse(String.Empty);

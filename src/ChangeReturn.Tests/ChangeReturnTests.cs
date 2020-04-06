@@ -1,35 +1,35 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace ChangeReturn.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ChangeReturnTests
     {
         private ChangeReturn changeReturn;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             changeReturn = new ChangeReturn();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             changeReturn = null;
         }  
 
-        [TestMethod]
+        [Test]
         public void ChangeReturn_returns_empty_array_when_no_change_should_be_returned()
         {
             var result = changeReturn.GetChange(0, 0);
             Assert.AreEqual(0, result.Count());
         }
 
-        [TestMethod]
+        [Test]
         public void ChangeReturn_returns_three_dollars_and_a_nickel()
         {
             var expected = new List<Change>
@@ -43,7 +43,7 @@ namespace ChangeReturn.Tests
             CollectionAssert.AreEquivalent(expected, result);
         }
 
-        [TestMethod]
+        [Test]
         public void ChangeReturn_returns_one_of_each_denomination()
         {
             var expected = new List<Change>
@@ -66,7 +66,7 @@ namespace ChangeReturn.Tests
             CollectionAssert.AreEquivalent(expected, result);
         }
 
-        [TestMethod]
+        [Test]
         public void ChangeReturn_returns_one_dime_and_one_nickel()
         {
             var expected = new List<Change>

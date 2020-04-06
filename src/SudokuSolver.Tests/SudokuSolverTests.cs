@@ -1,26 +1,26 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 
 namespace SudokuSolver.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class SudokuSolverTests
     {
         private SudokuSolver sudokuSolver;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             sudokuSolver = new SudokuSolver();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             sudokuSolver = null;
         }
         
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
         }

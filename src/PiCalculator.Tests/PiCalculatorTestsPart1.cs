@@ -1,26 +1,26 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 
 namespace PiCalculator.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class PiCalculatorTestsPart1
     {
         private PiCalculator piCalculator;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             piCalculator = new PiCalculator();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             piCalculator = null;
         }
 
-        [TestMethod]
+        [Test]
         public void PiCalculator_GetPi_returns_314_for_input_2()
         {
             var result = piCalculator.GetPi(2);

@@ -1,26 +1,26 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 
 namespace MortgageCalculator.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class MortgageCalculatorTestsPart2
     {
         private MortgageCalculator mortgageCalculator;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             mortgageCalculator = new MortgageCalculator();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             mortgageCalculator = null;
         }
         
-        [TestMethod]
+        [Test]
         public void MortgageCalculator_CalculateMonthlyPayment_1()
         {
             var result = mortgageCalculator.CalculateMonthlyPayment(1, 0, 12, 0);

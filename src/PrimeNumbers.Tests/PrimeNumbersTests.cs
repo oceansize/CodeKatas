@@ -1,26 +1,26 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 
 namespace PrimeNumbers.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class PrimeNumbersTests
     {
         private PrimeNumbers primeNumbers;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             primeNumbers = new PrimeNumbers();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             primeNumbers = null;
         }
         
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
             var result = primeNumbers.GetNextPrimeNumber(1);
