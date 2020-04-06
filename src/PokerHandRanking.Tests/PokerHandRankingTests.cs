@@ -1,27 +1,28 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+
 
 namespace PokerHandRanking.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class PokerHandRankingTests
     {
         private PokerHandRanking pokerHandRanking;
 
-        [TestInitialize]
+        [SetUp]
         public void TestInitialize()
         {
             pokerHandRanking = new PokerHandRanking();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TestCleanup()
         {
             pokerHandRanking = null;
         }
         
-        [TestMethod]
+        [Test]
         public void PokerHandRanking_returns_royal_flush()
         {
             var hand = new List<Card>()

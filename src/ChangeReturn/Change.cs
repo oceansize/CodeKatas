@@ -1,4 +1,4 @@
-﻿namespace ChangeReturn
+namespace ChangeReturn
 {
     public class Change
     {
