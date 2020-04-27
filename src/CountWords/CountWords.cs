@@ -6,7 +6,13 @@ namespace CountWords
     {
         public int Count(string s)
         {
-            throw new NotImplementedException();
+            if (String.IsNullOrEmpty(s))
+            {
+                return 0;
+            }
+            var subStrings = s.Split(new char[] {' ', ','});
+            var newStrings = subStrings.Length;
+            return newStrings;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace CountWords.Tests
         public void TestCleanup()
         {
             countWords = null;
-        } 
+        }
 
         [Test]
         public void CountWords_returns_0_for_empty_string()
@@ -36,7 +36,7 @@ namespace CountWords.Tests
         }
 
         [Test]
-        public void CountWords_returns_4_for_comma_seperated_list_with_no_spaces()
+        public void CountWords_returns_4_for_comma_separated_list_with_no_spaces()
         {
             int result = countWords.Count("Billy,Bob,Joe,Jim");
             Assert.AreEqual(4, result);
