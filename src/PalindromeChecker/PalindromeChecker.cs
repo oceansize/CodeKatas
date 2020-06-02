@@ -6,7 +6,15 @@ namespace PalindromeChecker
     {
         public bool IsPalindrome(string s)
         {
-            throw new NotImplementedException();
+            if (s != null)
+            {
+                var originalString = s.ToCharArray();
+                Array.Reverse(originalString);
+                var reversedString = new String(originalString);
+                return reversedString.Equals(s);
+            }
+
+            return true;
         }
     }
 }
