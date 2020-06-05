@@ -20,12 +20,12 @@ namespace PalindromeChecker.Tests
         public void TestCleanup()
         {
             palindromeChecker = null;
-        }  
+        }
 
         [Test]
         public void PalindromeChecker_returns_true_for_empty_string()
         {
-            var result = palindromeChecker.IsPalindrome(String.Empty);
+            var result = palindromeChecker.IsPalindrome("             ");
             Assert.AreEqual(true, result);
         }
 
@@ -62,6 +62,6 @@ namespace PalindromeChecker.Tests
         {
             var result = palindromeChecker.IsPalindrome("palindrome");
             Assert.AreEqual(false, result);
-        } 
+        }
     }
 }
